@@ -1,0 +1,18 @@
+<div class="container theme-showcase" role="main">
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron">
+      <h1>KAPS Member Check</h1>
+      <p>Please fill out one of the following fields:</p>
+      <%= form_tag("/results", method: "get") do %>
+          <%= label_tag(:name, "Name:") %>
+          <%= text_field_tag(:name) %><br/>
+          or<br/>
+          <%= label_tag(:email, "Email:") %>
+          <%= text_field_tag(:email) %><br/>
+          or<br/>
+          <%= label_tag(:paypal, "Paypal Email:") %>
+          <%= text_field_tag(:paypal) %><br/><br/>
+          <button type="submit" class="btn btn-success">Search</button>
+      <% end %>
+    </div>
+</div>
