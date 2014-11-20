@@ -3,12 +3,17 @@
 <head>
   <title>KAPSMembers</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
 <%= yield %>
 
+<footer class="footer">
+  <div class="container">
+    <p class="text-muted">KAPS &copy; 2014 | Hyon Lee</p>
+  </div>
+</footer>
 </body>
+<%= javascript_include_tag "application" %>
 </html>
