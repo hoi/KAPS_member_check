@@ -21,7 +21,11 @@ class MembersController < ApplicationController
         @result = "Multiple entries found.  Please try again."
       elsif member_query.count == 1
         member = member_query.first
-        if member.membership_end >= Date.today
+        if member.lifetime
+          @result = member.name + " is a lifetime member."
+        elsif member.membership_end.nil? or member.membership_end == ""
+          @result = member.name + " has insufficient information."
+        elsif member.membership_end >= Date.today
           @result = member.name + " is currently a member."
         else
           @result = member.name + " is no longer a member."
