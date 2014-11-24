@@ -10,7 +10,7 @@ class MembersController < ApplicationController
     @result = "No Results Found."
     if params[:name] != "" or params[:email] != "" or params[:paypal] != ""
       if params[:name] != ""
-        member_query = Member.where('upper(name) LIKE "%' + params[:name].upcase + '%"')
+        member_query = Member.where('upper(name) LIKE \'%' + params[:name].upcase + '%\'')
       elsif params[:email] != ""
         member_query = Member.where('upper(email)=?', params[:email].upcase)
       elsif params[:paypal] != ""
